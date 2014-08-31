@@ -1,4 +1,4 @@
 jquery-masonry
 ==============
 
-jQuery plugin for responsiv and pre defined grid layouts without a single gap.
+jQuery plugin for responsive and pre defined grid layouts without a single gap.
