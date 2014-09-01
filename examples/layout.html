@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset=UTF-8">
+        <title>jQuery Masonry Examples</title>
+  
+        <style type="text/css">
+            .masonry {
+                max-width: 1210px;
+                margin: 0px auto;
+                position: relative; }
+
+            .brick {
+                background: black; }
+
+        </style>
+    </head>
+    <body>
+    
+        <div class="masonry">   
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+        </div>
+        
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="../js/jquery.masonry.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".masonry").Masonry({
+                    desktop : [
+                        [[0,0],[6,5]],
+                        [[5,0],[3,3]],
+                        [[5,3],[3,3]],
+                        [[8,0],[6,5]],
+                        [[13,0],[3,3]],
+                        [[13,3],[3,3]],
+                        [[16,0],[6,5]],
+                        [[21,0],[3,3]],
+                        [[21,3],[3,3]],
+                        [[24,0],[6,5]],
+                        [[29,0],[3,3]],
+                        [[29,3],[3,3]]
+                    ]
+                });
+            });
+        </script>
+
+    </body>
+</html>
