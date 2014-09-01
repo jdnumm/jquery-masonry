@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset=UTF-8">
+        <title>jQuery Masonry Examples</title>
+  
+        <style type="text/css">
+            .masonry {
+                max-width: 1210px;
+                margin: 0px auto;
+                position: relative; }
+
+            .brick {
+                background: black; }
+
+        </style>
+    </head>
+    <body>
+    
+        <div class="masonry">   
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+        </div>
+        
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="../js/jquery.masonry.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".masonry").Masonry({
+                    start : function () {
+                        $('.brick').css('background','#f00'); 
+                    },
+                    stop : function () {
+                        $('.brick').css('background','#000')
+                    },
+                });
+            });
+        </script>
+
+    </body>
+</html>
