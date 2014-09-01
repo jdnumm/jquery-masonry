@@ -1,62 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html"; charset=UTF-8">
-    <title>jQuery Masonry Examples</title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset=UTF-8">
+        <title>jQuery Masonry Examples</title>
   
-    <style type="text/css">
-      .masonry {
-        max-width: 1210px;
-        margin: 0px auto;
-        position: relative; }
+        <style type="text/css">
+            .masonry {
+                max-width: 1210px;
+                margin: 0px auto;
+                position: relative; }
 
-      .brick {
-        position: relative;
-        box-sizing: border-box;
-        padding: 0px;
-        margin: 0px;
-        border: 5px solid #fff;
-        width: 300%;
-        display: block;
-        float: left;
-        overflow: hidden;
-        background: black; }
-
-      @media (min-width: 768px) {
-        .brick {
-          width: 50%; } }
-      @media (min-width: 960px) {
-        .brick {
-          width: 300px;
-          height: 200px; } }
-            
-    </style>
-  </head>
-  <body>
+            .brick {
+                background: black; }
+                
+        </style>
+    </head>
+    <body>
     
-    <div class="masonry">	
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-      <div class="brick"> </div>
-    </div>
+        <div class="masonry">   
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+            <div class="brick"> </div>
+        </div>
+        
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="../js/jquery.masonry.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".masonry").Masonry();
+            });
+        </script>
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="../js/jquery.masonry.js"></script>
-    
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $(".masonry").Masonry({});
-      });
-    </script>
-
-  </body>
+    </body>
 </html>

@@ -61,7 +61,6 @@
             // Detect device width set layout.
             var buildMasonry = function (obj) {
                   
-                obj.settings['start'].call(this);
                   
                 var full_width = $(obj.element).width()-10;
                   
@@ -76,27 +75,27 @@
                 var gutter = parseInt('10');
 
                 for(i=0; i<nodes.length; i++) {
-                    var node = nodes[i];
-                    var style = "";
-                    style += "position: absolute; border: none;";
-                    style += "top:"+(layout[i][0][0]*base_height+gutter)+"px;"
-                    style += "left:"+(layout[i][0][1]*base_width+gutter)+"px;";
-                    style += "width:"+(layout[i][1][0]*base_width-gutter)+"px;";
-                    style += "height:"+(layout[i][1][1]*base_height-gutter)+"px;";
-                   
-                    nodes[i].setAttribute("style",style);
-                     
+                    
+                    $(nodes[i]).css('position','absolute');
+                    $(nodes[i]).css('top',(layout[i][0][0]*base_height+gutter));
+                    $(nodes[i]).css('left',(layout[i][0][1]*base_width+gutter));
+                    $(nodes[i]).css('width',(layout[i][1][0]*base_width-gutter));
+                    $(nodes[i]).css('height',(layout[i][1][1]*base_height-gutter));
+                    
                     var parent = obj.element;
                     var a = layout[i][0][0]*base_height;
                     var b = layout[i][1][1]*base_height+layout[i][0][0]*base_height;
-                    parent.setAttribute("style","height:"+b+"px;");
+                    $(parent).css('height', b);
+            
                 }
+                obj.settings['stop'].call(this);
             }
             function resizeEvent(obj) {
                 var doit;
                 $(window).bind('resize', function(e) {
                     clearTimeout(doit);
-                    doit = setTimeout(function() { buildMasonry(obj) } , 5)
+                    obj.settings['start'].call(this);
+                    doit = setTimeout(function() { buildMasonry(obj) } , 10)
                 });
             }
             resizeEvent(this);
