@@ -31,37 +31,85 @@
         <hr>
 
         <section id="main_content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <h1>
+<a name="jquery-plugin-for-responsive-and-pre-defined-grid-layouts" class="anchor" href="#jquery-plugin-for-responsive-and-pre-defined-grid-layouts"><span class="octicon octicon-link"></span></a>jQuery plugin for responsive and pre defined grid layouts.</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>There are tons of masonry plugins out there but this one doesn't try to build  the wall with the help of some math, this one use a pre defined Layout.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>Take a look at the examples. And try to resize your browser to see how Masonry will rebuild the Grid for you.</p>
+
+<ul>
+<li>
+<a href="http://monocult.github.io/jquery-masonry/examples/default.html">Default</a> </li>
+<li><a href="http://monocult.github.io/jquery-masonry/examples/layout.html">Custom Layouts</a></li>
+<li><a href="http://monocult.github.io/jquery-masonry/examples/callback.html">Callbacks</a></li>
+</ul><h2>
+<a name="basic-usage" class="anchor" href="#basic-usage"><span class="octicon octicon-link"></span></a>Basic usage</h2>
+
+<p>Load jQuery the plugin and style your grid fallback. </p>
+
+<pre><code>&lt;style type="text/css"&gt;
+    .masonry {
+        max-width: 1210px;
+        margin: 0px auto;
+        position: relative; }
+
+&lt;/style&gt;
+
+&lt;div class="masonry"&gt;   
+    &lt;div class="brick"&gt; &lt;/div&gt;
+    &lt;div class="brick"&gt; &lt;/div&gt;
+    ...
+&lt;/div&gt;
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Now you can use Masonry like this.</p>
+
+<pre><code>$(".masonry").Masonry();
+</code></pre>
+
+<h2>
+<a name="callbacks" class="anchor" href="#callbacks"><span class="octicon octicon-link"></span></a>Callbacks</h2>
+
+<p>The two  callback functions: "start" and "stop" are fired before we build the masonry and after the build is complete. You can use this functions for example to hide or redraw your content.</p>
+
+<pre><code>$(".masonry").Masonry({
+    start : function () {
+        $('.brick').css('background','#f00'); 
+    },
+    stop : function () {
+        $('.brick').css('background','#000')
+    },
+});
+</code></pre>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="change-the-layout" class="anchor" href="#change-the-layout"><span class="octicon octicon-link"></span></a>Change the Layout</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>It is easy to apply your own Layouts but the array must contain at least a value-pair for each of the child’s. By default Masonry use a Grid with 6 Columns and have separate layouts for desktop, tablet and smartphones.</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<p>The value pair in the example below means the position of the top-left corner and the width, height of the box.</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<pre><code>$(".masonry").Masonry({
+     desktop : [
+        [[0,0],[6,5]],
+        [[5,0],[3,3]],
+        [[5,3],[3,3]],
+        [[8,0],[6,5]],
+        [[13,0],[3,3]],
+        [[13,3],[3,3]],
+        [[16,0],[6,5]],
+        [[21,0],[3,3]],
+        [[21,3],[3,3]],
+        [[24,0],[6,5]],
+        [[29,0],[3,3]],
+        [[29,3],[3,3]]
+    ],
+});
+</code></pre>
         </section>
 
         <footer>
