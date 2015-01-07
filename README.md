@@ -1,3 +1,5 @@
+© 2015 [BLACKTREES](http://blacktre.es)
+
 # jQuery plugin for responsive and pre defined grid layouts.
 
 There are tons of masonry plugins out there but this one doesn't try to build  the wall with the help of some math, this one use a pre defined Layout.
